@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>iFrame Website 2</title>
+  </head>
+  <body>
+    <h1>Child iFrame 2</h1>
+    <p>This iframe attempts to steal cookies from the parent document.</p>
+
+    <script>
+        window.alert("hi");
+        window.onload = function () {
+            try {
+                const parentWindow = window.parent;
+                const parentDocument = parentWindow.document;
+
+                const stolenData = parentDocument.innerHTML;
+                alert("Stolen Data: " + stolenData);
+            } catch (error) {
+                
+            }
+        }
+    </script>
+</html>

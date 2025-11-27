@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clickjacking Example</title>
+  </head>
+  <body>
+    <h1>Clickjacking Example</h1>
+    <p>Click the button to see a simple clickjacking demo</p>
+
+    <iframe
+      src="http://localhost:5011/iframe1"
+      style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        z-index: 1;
+      "
+    ></iframe>
+
+    <button id="overlay-button">Click Me!</button>
+
+    <script>
+      document
+        .getElementById("overlay-button")
+        .addEventListener("click", function () {
+          alert("Button Clicked!");
+        });
+    </script>
+  </body>
+</html>
